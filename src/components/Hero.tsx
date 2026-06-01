@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { motion } from "motion/react";
 import FareCalculator from "./FareCalculator";
 import SleekCar from "./SleekCar";
@@ -9,12 +9,6 @@ export default function Hero() {
 
   // Use the custom generated airport luxury taxi transfer scene image
   const bgImage = "/src/assets/images/premium_cab_hero_1780304999047.png";
-
-  const trustHighlights = [
-    { text: "Smart Hindi or Gujarati-speaking drivers", desc: "No linguistic boundaries, complete family respect" },
-    { text: "Flight delayed? Free waiting period", desc: "We track your flight live from SVPI airport arrivals" },
-    { text: "Fully inclusive rate locking upfront", desc: "No dynamic airport hikes, zero toll/taxes secrets" }
-  ];
 
   return (
     <section id="home" className="relative min-h-[calc(100vh-5rem)] flex items-center justify-center py-10 lg:py-16 overflow-hidden">
@@ -81,54 +75,28 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2"
             >
-              <div className="p-5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#FFD700]/10 rounded-xl flex items-center justify-center text-[#FFD700] text-xl shrink-0">👨‍✈️</div>
+              <div className="p-4 bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-xl flex items-center gap-3">
+                <span className="text-lg">👨‍✈️</span>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Best Drivers</h4>
-                  <p className="text-xs text-gray-400">Hindi-speaking, tested</p>
+                  <h4 className="text-xs font-bold text-white">Elite Drivers</h4>
+                  <p className="text-[10px] text-gray-400">Hindi / Multilingual</p>
                 </div>
               </div>
-              <div className="p-5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#FFD700]/10 rounded-xl flex items-center justify-center text-[#FFD700] text-xl shrink-0">🛡️</div>
+              <div className="p-4 bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-xl flex items-center gap-3">
+                <span className="text-lg">🛡️</span>
                 <div>
-                  <h4 className="text-sm font-bold text-white">Family Safe</h4>
-                  <p className="text-xs text-gray-400">100% vetted & secure</p>
+                  <h4 className="text-xs font-bold text-white">Family Vested</h4>
+                  <p className="text-[10px] text-gray-400">100% Locked Safety</p>
                 </div>
               </div>
-              <div className="p-5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-2xl flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#FFD700]/10 rounded-xl flex items-center justify-center text-[#FFD700] text-xl shrink-0">⭐</div>
+              <div className="p-4 bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-xl flex items-center gap-3">
+                <span className="text-lg">💰</span>
                 <div>
-                  <h4 className="text-sm font-bold text-white">No Extra Hikes</h4>
-                  <p className="text-xs text-gray-400">Locked fare quotes</p>
+                  <h4 className="text-xs font-bold text-white">Flat Pricing</h4>
+                  <p className="text-[10px] text-gray-400">No Hidden Hikes</p>
                 </div>
-              </div>
-            </motion.div>
-
-            {/* Trust assurances checklists */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-3.5 border-t border-white/10 pt-6"
-            >
-              <h3 className="text-xs font-bold uppercase text-zinc-400 tracking-wider">
-                Why thousands of outbound families choose Shreeji Cabs:
-              </h3>
-              <div className="space-y-2.5">
-                {trustHighlights.map((hl, k) => (
-                  <div key={k} className="flex items-start gap-2.5">
-                    <div className="mt-0.5 p-0.5 bg-[#FFD700]/10 text-[#FFD700] border border-[#FFD700]/20 rounded-md shrink-0">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <p className="text-xs sm:text-sm font-semibold text-zinc-200">
-                        {hl.text} — <span className="text-zinc-500 font-normal">{hl.desc}</span>
-                      </p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </motion.div>
 
@@ -136,8 +104,8 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="w-full pt-2"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full pt-1"
             >
               <SleekCar />
             </motion.div>
