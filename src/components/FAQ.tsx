@@ -111,7 +111,7 @@ export default function FAQ() {
         <div className="mt-12 text-center text-xs text-zinc-500 font-medium">
           Still have an out-of-the-box itinerary request? 
           <a
-            href="https://wa.me/919825447781?text=Hello%20Shreeji%20Cab,%20I%20have%20a%20special%20custom%20trip%20itinerary..."
+            href="https://wa.me/918530851640?text=Hello%20Shreeji%20Cab,%20I%20have%20a%20special%20custom%20trip%20itinerary..."
             target="_blank"
             rel="noopener noreferrer"
             className="text-amber-500 font-extrabold hover:underline ml-1 inline-flex items-center gap-0.5"

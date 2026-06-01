@@ -130,7 +130,7 @@ export default function FareCalculator() {
     text += `_Please lock my rate and verify availability of sanitized vehicle with Hindi-speaking driver. Thank you!_`;
 
     const encodedText = encodeURIComponent(text);
-    return `https://wa.me/919825447781?text=${encodedText}`;
+    return `https://wa.me/918530851640?text=${encodedText}`;
   };
 
   const handleFormSubmit = (e: React.FormEvent) => {

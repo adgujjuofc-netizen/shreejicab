@@ -5,7 +5,7 @@ import FareCalculator from "./FareCalculator";
 import SleekCar from "./SleekCar";
 
 export default function Hero() {
-  const WHATSAPP_NUMBER = "+919825447781";
+  const WHATSAPP_NUMBER = "+918530851640";
 
   // Use the custom generated airport luxury taxi transfer scene image
   const bgImage = "/src/assets/images/premium_cab_hero_1780304999047.png";

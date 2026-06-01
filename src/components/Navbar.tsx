@@ -20,7 +20,7 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
-  const WHATSAPP_NUMBER = "+919825447781"; // real format placeholder
+  const WHATSAPP_NUMBER = "+918530851640"; // real format placeholder
 
   return (
     <>
@@ -66,12 +66,12 @@ export default function Navbar() {
           {/* Core Booking Actions Group */}
           <div className="hidden sm:flex items-center gap-3.5">
             <a
-              href="tel:+919825447781"
+              href="tel:+918530851640"
               id="nav-call-btn"
               className="flex items-center gap-2 py-2 px-3.5 bg-zinc-950 border border-white/10 hover:border-[#D4AF37] hover:text-[#FFD700] transition-all rounded-lg text-sm font-semibold text-white"
             >
               <Phone className="w-4 h-4 text-[#D4AF37]" />
-              <span className="hidden md:inline text-zinc-350 font-mono text-xs">+91 98254 47781</span>
+              <span className="hidden md:inline text-zinc-350 font-mono text-xs">+91 85308 51640</span>
               <span className="md:hidden text-zinc-350 font-mono text-xs">Call Us</span>
             </a>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
                 {/* Mobile action call buttons */}
                 <div className="grid grid-cols-2 gap-3 pt-4">
                   <a
-                    href="tel:+919825447781"
+                    href="tel:+918530851640"
                     className="flex items-center justify-center gap-2 py-3 bg-zinc-950 border border-white/10 rounded-lg text-zinc-300 text-sm font-semibold"
                   >
                     <Phone className="w-4 h-4 text-[#D4AF37]" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Phone, Mail, MapPin, ShieldCheck, Heart, ArrowUp } from "lucide-react";
 
 export default function Footer() {
-  const WHATSAPP_NUMBER = "+919825447781";
+  const WHATSAPP_NUMBER = "+918530851640";
 
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -123,14 +123,26 @@ export default function Footer() {
             <ul className="space-y-3.5 text-xs sm:text-sm">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
-                <span className="text-xs leading-relaxed text-zinc-400">
-                  Office No. 104, SVPI Airport Circular Road, Hansol Corridor, Ahmedabad, Gujarat 382475
-                </span>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest font-mono">Head Office:</span>
+                  <span className="text-xs leading-relaxed text-zinc-400">
+                    Office No. 104, SVPI Airport Circular Road, Hansol Corridor, Ahmedabad, Gujarat 382475
+                  </span>
+                </div>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest font-mono">2nd Office / Branch:</span>
+                  <span className="text-xs leading-relaxed text-zinc-400 font-medium">
+                    Mandap road, Jirapa plot, Upleta, Gujarat 360490
+                  </span>
+                </div>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-500 shrink-0" />
-                <a href="tel:+919825447781" className="font-mono text-[#f5bf42] font-semibold hover:underline">
-                  +91-98254-47781
+                <a href="tel:+918530851640" className="font-mono text-[#f5bf42] font-semibold hover:underline">
+                  +91 85308 51640
                 </a>
               </li>
               <li className="flex items-center gap-2.5">

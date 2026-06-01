@@ -3,7 +3,7 @@ import { Sparkles, MessageCircle, Info, ShieldAlert } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function SpecialOffer() {
-  const WHATSAPP_NUMBER = "+919825447781";
+  const WHATSAPP_NUMBER = "+918530851640";
 
   const promoMessage = `Hello Shreeji Cab, I want to avail the FIRST RIDE SPECIAL DISCOUNT of ₹250 for my trip. Please share options!`;
 

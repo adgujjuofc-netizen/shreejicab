@@ -3,7 +3,7 @@ import { MessageSquare } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function WhatsAppButton() {
-  const WHATSAPP_NUMBER = "+919825447781";
+  const WHATSAPP_NUMBER = "+918530851640";
   const defaultText = encodeURIComponent(
     "Hello Shreeji Cab! I just landed on your premium airport service page and want to book/get an instant fare quote."
   );
