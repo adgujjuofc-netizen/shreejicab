@@ -10,8 +10,8 @@ export default function Navbar() {
     { label: "Home", href: "#home", id: "home" },
     { label: "Our Advantages", href: "#advantages", id: "advantages" },
     { label: "Our Services", href: "#services", id: "services" },
-    { label: "Our Fleet", href: "#fleet", id: "fleet" },
-    { label: "Popular Routes & Rates", href: "#routes", id: "routes" },
+    { label: "Our Fleet Pricing", href: "#pricing-cards", id: "pricing-cards" },
+    { label: "Popular Routes & Rates", href: "#route-comparison-table", id: "route-comparison-table" },
     { label: "Customer Reviews", href: "#reviews", id: "reviews" }
   ];
 

@@ -4,8 +4,8 @@ import Hero from "./components/Hero";
 import TrustIndicators from "./components/TrustIndicators";
 import PainPoints from "./components/PainPoints";
 import Services from "./components/Services";
-import Fleet from "./components/Fleet";
-import RoutesWidget from "./components/RoutesWidget";
+import PremiumPricing from "./components/PremiumPricing";
+import RoutePricingTable from "./components/RoutePricingTable";
 import SpecialOffer from "./components/SpecialOffer";
 import DriverProfiles from "./components/DriverProfiles";
 import Reviews from "./components/Reviews";
@@ -81,11 +81,11 @@ export default function App() {
               {/* Six Main Fleet Services */}
               <Services />
 
-              {/* Dynamic Pricing / Specific Highway Rates Cards */}
-              <RoutesWidget />
+              {/* City Route Price Table comparison section */}
+              <RoutePricingTable />
 
-              {/* Interactive Spotless Vehicles Slider / showcase */}
-              <Fleet />
+              {/* Premium Vehicle pricing cards section */}
+              <PremiumPricing />
 
               {/* Vetted Driver Bios profiles */}
               <DriverProfiles />
