@@ -1,0 +1,6 @@
+{
+  "name": "Shreeji Cab Service",
+  "description": "Premium booking and airport transfer service in Ahmedabad, Gujarat. High-converting family-safe tourist cabs and airport transfers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
