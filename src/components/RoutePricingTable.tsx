@@ -22,8 +22,8 @@ const COMPARISON_ROUTES: RouteComparison[] = [
     destination: "Hirasar Airport (New Rajkot Int.)",
     distanceKm: 180,
     durationHours: "3.0 Hrs",
-    seater5Price: 2199,
-    seater7Price: 2899,
+    seater5Price: 3000,
+    seater7Price: 3540,
     isCheapest: true,
     transitNote: "Direct transit through Saurashtra Express toll road."
   },
@@ -33,8 +33,8 @@ const COMPARISON_ROUTES: RouteComparison[] = [
     destination: "Rajkot City Corporate Hub",
     distanceKm: 220,
     durationHours: "4.0 Hrs",
-    seater5Price: 2690,
-    seater7Price: 3490,
+    seater5Price: 3600,
+    seater7Price: 4260,
     isPopular: true,
     transitNote: "Pristine state highway with Limbdi food court stopovers."
   },
@@ -44,8 +44,8 @@ const COMPARISON_ROUTES: RouteComparison[] = [
     destination: "Vadodara / Alkapuri Commercial",
     distanceKm: 115,
     durationHours: "2.0 Hrs",
-    seater5Price: 1890,
-    seater7Price: 2590,
+    seater5Price: 2025,
+    seater7Price: 2370,
     transitNote: "Premium NE-1 expressway route; highly optimized transfers."
   },
   {
@@ -54,8 +54,8 @@ const COMPARISON_ROUTES: RouteComparison[] = [
     destination: "Ahmedabad Full Day (Local Tour)",
     distanceKm: 80,
     durationHours: "8.0 Hrs",
-    seater5Price: 1590,
-    seater7Price: 2490,
+    seater5Price: 1500,
+    seater7Price: 1740,
     transitNote: "Best for NRI shopping, local temple pilgrimages & weddings."
   }
 ];

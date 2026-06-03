@@ -5,16 +5,17 @@ import { motion } from "motion/react";
 interface VehicleConfig {
   id: string;
   name: string;
-  pricePerKm: number;
+  pricePerKmOneWay: number;
+  pricePerKmRound: number;
   driverAllowance: number;
 }
 
 const VEHICLES_CONFIG: Record<string, VehicleConfig> = {
-  dzire: { id: "dzire", name: "Swift Dzire", pricePerKm: 11, driverAllowance: 300 },
-  aura: { id: "aura", name: "Hyundai Aura", pricePerKm: 12, driverAllowance: 300 },
-  ertiga: { id: "ertiga", name: "Suzuki Ertiga", pricePerKm: 14, driverAllowance: 300 },
-  rumion: { id: "rumion", name: "Toyota Rumion", pricePerKm: 15, driverAllowance: 300 },
-  crysta: { id: "crysta", name: "Innova Crysta", pricePerKm: 18, driverAllowance: 400 }
+  dzire: { id: "dzire", name: "Swift Dzire", pricePerKmOneWay: 15, pricePerKmRound: 11, driverAllowance: 300 },
+  aura: { id: "aura", name: "Hyundai Aura", pricePerKmOneWay: 15, pricePerKmRound: 11, driverAllowance: 300 },
+  ertiga: { id: "ertiga", name: "Suzuki Ertiga", pricePerKmOneWay: 18, pricePerKmRound: 13, driverAllowance: 300 },
+  rumion: { id: "rumion", name: "Toyota Rumion", pricePerKmOneWay: 18, pricePerKmRound: 13, driverAllowance: 300 },
+  crysta: { id: "crysta", name: "Innova Crysta", pricePerKmOneWay: 22, pricePerKmRound: 18, driverAllowance: 400 }
 };
 
 const POPULAR_SUGGESTIONS = [
@@ -92,20 +93,14 @@ export default function FareCalculator() {
 
   // Live Calculation state derivation
   const config = VEHICLES_CONFIG[selectedVehicle] || VEHICLES_CONFIG.dzire;
-  const ratePerKm = config.pricePerKm;
+  const ratePerKm = tripType === "round" ? config.pricePerKmRound : config.pricePerKmOneWay;
   const driverAllowance = config.driverAllowance;
   
   // Calculate total distance traveled
   const totalTravelDistance = tripType === "round" ? distanceKm * 2 : distanceKm;
   
   // Base cost calculation
-  let baseCost = totalTravelDistance * ratePerKm;
-
-  // Add round trip savings benefit
-  if (tripType === "round") {
-    // 10% round trip highway incentive discount over base rates
-    baseCost = baseCost * 0.9;
-  }
+  const baseCost = totalTravelDistance * ratePerKm;
 
   // All-inclusive calculated fare representation
   const calculatedFare = Math.round(baseCost + driverAllowance);
@@ -321,7 +316,7 @@ export default function FareCalculator() {
                 }`}
               >
                 <span className="text-[10px] font-bold block truncate">{v.name}</span>
-                <span className="text-[8px] font-mono block text-zinc-500">₹{v.pricePerKm}/km</span>
+                <span className="text-[8px] font-mono block text-zinc-500">₹{tripType === "round" ? v.pricePerKmRound : v.pricePerKmOneWay}/km</span>
               </button>
             ))}
           </div>

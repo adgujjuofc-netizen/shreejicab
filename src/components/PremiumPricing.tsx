@@ -6,7 +6,8 @@ export interface PricingVehicle {
   id: string;
   name: string;
   category: "Premium Sedan" | "Family SUV" | "Ultra Luxury MPV";
-  pricePerKm: number;
+  pricePerKmOneWay: number;
+  pricePerKmRound: number;
   seats: number;
   driverAllowance: number;
   minKmPerDay: number;
@@ -21,65 +22,70 @@ const PRICING_VEHICLES: PricingVehicle[] = [
     id: "dzire",
     name: "Suzuki Swift Dzire",
     category: "Premium Sedan",
-    pricePerKm: 11,
+    pricePerKmOneWay: 15,
+    pricePerKmRound: 11,
     seats: 4,
     driverAllowance: 300,
     minKmPerDay: 300,
     tollInfo: "Tolls & Parking Extra",
-    bestUse: "Efficient & rapid airport pickup or tight budget couples",
-    image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&q=80&w=600",
+    bestUse: "Efficient & rapid outstation travel or airport transfer",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fe/2017_Suzuki_Dzire_VXI.jpg",
     tagline: "Comfortable budget-friendly sedan, perfect for corporate or couples"
   },
   {
     id: "aura",
     name: "Hyundai Aura Executive",
     category: "Premium Sedan",
-    pricePerKm: 12,
+    pricePerKmOneWay: 15,
+    pricePerKmRound: 11,
     seats: 4,
     driverAllowance: 300,
     minKmPerDay: 300,
     tollInfo: "Tolls & Parking Extra",
     bestUse: "Pristine styling & spacious rear seating legroom",
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=600",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/15/2020_Hyundai_Aura_S.jpg",
     tagline: "Sleek modern aesthetics, perfect for city-to-city transfers"
   },
   {
     id: "ertiga",
     name: "Suzuki Ertiga Smart SUV",
     category: "Family SUV",
-    pricePerKm: 14,
+    pricePerKmOneWay: 18,
+    pricePerKmRound: 13,
     seats: 6,
     driverAllowance: 300,
     minKmPerDay: 300,
     tollInfo: "Tolls & Parking Extra",
     bestUse: "Balanced budget family outstation pilgrimages",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=600",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ec/2019_Suzuki_Ertiga_GL_1.5.jpg",
     tagline: "Unbeatable cabin spaciousness & dual blower climate comfort"
   },
   {
     id: "rumion",
     name: "Toyota Rumion Neo",
     category: "Family SUV",
-    pricePerKm: 15,
+    pricePerKmOneWay: 18,
+    pricePerKmRound: 13,
     seats: 6,
     driverAllowance: 300,
     minKmPerDay: 300,
     tollInfo: "Tolls & Parking Extra",
     bestUse: "Premium executive MPV comfort on long journeys",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&q=80&w=600",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/2021_Toyota_Rumion_1.5_TX_%28South_Africa%29.jpg",
     tagline: "Toyota design language, robust performance & supreme luxury suspension"
   },
   {
     id: "crysta",
     name: "Toyota Innova Crysta VIP",
     category: "Ultra Luxury MPV",
-    pricePerKm: 18,
+    pricePerKmOneWay: 22,
+    pricePerKmRound: 18,
     seats: 7,
     driverAllowance: 400,
     minKmPerDay: 300,
     tollInfo: "Tolls & Parking Extra",
     bestUse: "NRI VIP greetings, elite highway tourist routes & premium luxury",
-    image: "/src/assets/images/luxury_toyota_mpv_1780305020580.png",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/2016_Toyota_Innova_Crysta_2.4_ZX_%28India%29_front_view.jpg",
     tagline: "The gold-standard champion of absolute travel comfort & captains chairs"
   }
 ];
@@ -156,8 +162,10 @@ export default function PremiumPricing() {
                   </span>
                   
                   {/* Per KM pricing tag mimicking Uber/Premium */}
-                  <div className="absolute bottom-3 right-3 py-1 px-3 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-black font-mono font-black text-xs rounded-lg shadow-md uppercase tracking-wider">
-                    ₹{car.pricePerKm}/km
+                  <div className="absolute bottom-3 right-3 py-1.5 px-3 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] text-black font-mono font-black rounded-xl shadow-lg border border-[#D4AF37] uppercase tracking-wider flex flex-col items-center leading-none justify-center">
+                    <div className="text-[10px] font-black">₹{car.pricePerKmOneWay}/km <span className="text-[7.5px] font-medium opacity-85">(One Way)</span></div>
+                    <div className="w-full h-[1px] bg-black/10 my-1"></div>
+                    <div className="text-[9px] font-bold">₹{car.pricePerKmRound}/km <span className="text-[7.5px] font-medium opacity-85">(Round)</span></div>
                   </div>
                 </div>
 
