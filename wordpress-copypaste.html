@@ -580,6 +580,154 @@ How to use on your WordPress site:
       const waUrl = `https://wa.me/918530851640?text=${encoded}`;
       window.open(waUrl, "_blank");
     }
+
+    // Special premium conversion-focused fare popup logic
+    document.addEventListener("DOMContentLoaded", function() {
+      // Check if popup has already been shown in this exact browser session
+      const hasSeen = sessionStorage.getItem("hasSeenWPFarePopup");
+      if (!hasSeen) {
+        setTimeout(showWPFarePopup, 4000); // 4 seconds delays as mandated
+      }
+    });
+
+    function showWPFarePopup() {
+      const wrapper = document.getElementById("wp-fare-popup-wrapper");
+      const card = document.getElementById("wp-fare-popup-card");
+      if (wrapper && card) {
+        wrapper.classList.remove("hidden");
+        // Smooth scale and fade integration
+        setTimeout(() => {
+          wrapper.classList.remove("opacity-0-custom");
+          wrapper.classList.add("opacity-100-custom");
+          card.classList.remove("scale-95");
+          card.classList.add("scale-100");
+        }, 50);
+      }
+    }
+
+    function closeWPFarePopup() {
+      const wrapper = document.getElementById("wp-fare-popup-wrapper");
+      const card = document.getElementById("wp-fare-popup-card");
+      if (wrapper && card) {
+        wrapper.classList.remove("opacity-100-custom");
+        wrapper.classList.add("opacity-0-custom");
+        card.classList.remove("scale-100");
+        card.classList.add("scale-95");
+        
+        setTimeout(() => {
+          wrapper.classList.add("hidden");
+        }, 500);
+      }
+      sessionStorage.setItem("hasSeenWPFarePopup", "true");
+    }
+
+    function triggerWPFarePopupCTA() {
+      sessionStorage.setItem("hasSeenWPFarePopup", "true");
+      closeWPFarePopup();
+      const encodedMsg = encodeURIComponent("Hi, I want to check today's fare.");
+      const waUrl = "https://wa.me/918530851640?text=" + encodedMsg;
+      window.open(waUrl, "_blank");
+    }
   </script>
+
+  <!-- High-Converting Gold & Black Premium Glassmorphic Lead Popup -->
+  <style>
+    .opacity-0-custom { opacity: 0 !important; pointer-events: none !important; }
+    .opacity-100-custom { opacity: 1 !important; pointer-events: auto !important; }
+    .scale-95 { transform: scale(0.95); }
+    .scale-100 { transform: scale(1); }
+  </style>
+
+  <div id="wp-fare-popup-wrapper" class="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 backdrop-blur-md bg-black/60 font-sans hidden opacity-0-custom transition-opacity duration-500 ease-out">
+    <!-- Overlay click closure -->
+    <div class="absolute inset-0 cursor-pointer" onclick="closeWPFarePopup()"></div>
+
+    <!-- Luxury Card Box -->
+    <div class="relative w-full max-w-sm bg-[#0d0d0d] border border-[#D4AF37]/35 rounded-[24px] overflow-hidden shadow-[0_25px_60px_-15px_rgba(212,175,55,0.25)] p-6 sm:p-8 flex flex-col transform scale-95 transition-all duration-500 ease-out" id="wp-fare-popup-card">
+      
+      <!-- Gradient ambient glows -->
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#D4AF37]/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-emerald-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Glowing top accent line -->
+      <div class="absolute top-0 left-10 right-10 h-[1.5px] bg-gradient-to-r from-transparent via-[#FFD700]/60 to-transparent shadow-[0_0_12px_rgba(255,215,0,0.4)]"></div>
+
+      <!-- Close Button Element -->
+      <button onclick="closeWPFarePopup()" class="absolute top-4 right-4 p-2 text-zinc-500 hover:text-[#FFD700] hover:bg-white/5 rounded-full transition-all duration-200 cursor-pointer" style="background: none; border: none;" aria-label="Dismiss Offer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Badge Indicator -->
+      <div class="flex justify-center mb-4">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-full text-[11px] sm:text-xs font-mono font-black text-[#FFD700] tracking-wider uppercase animate-pulse">
+          🔥 LIMITED TIME OFFER
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <div class="text-center mb-5">
+        <h3 class="font-sans font-black text-2.5xl text-white tracking-tight leading-tight" style="font-weight: 900; color: #FFF;">
+          💰 Special Fare Available Today
+        </h3>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-2 max-w-sm mx-auto font-medium" style="color: #a1a1aa;">
+          Check today's best available outstation & airport fare before rates change.
+        </p>
+      </div>
+
+      <!-- Premium Divider -->
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent my-2" style="background: linear-gradient(to right, transparent, #27272a, transparent); height: 1px;"></div>
+
+      <!-- Benefits Row Grid -->
+      <div class="grid grid-cols-2 gap-3 my-2 text-zinc-300" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem;">
+        <div class="flex items-center gap-2 p-2.5 bg-white/[0.03] border border-white/5 rounded-xl" style="display: flex; align-items: center; gap: 0.5rem; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 0.625rem; border-radius: 0.75rem;">
+          <span class="text-emerald-400 text-sm shrink-0" style="color: #34d399;">✅</span>
+          <span class="font-bold text-[11px] tracking-tight" style="color: #d4d4d8; font-weight: 700; font-size: 11px;">Instant Fare Check</span>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 bg-white/[0.03] border border-white/5 rounded-xl" style="display: flex; align-items: center; gap: 0.5rem; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 0.625rem; border-radius: 0.75rem;">
+          <span class="text-emerald-400 text-sm shrink-0" style="color: #34d399;">✅</span>
+          <span class="font-bold text-[11px] tracking-tight" style="color: #d4d4d8; font-weight: 700; font-size: 11px;">Live Availability</span>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 bg-white/[0.03] border border-white/5 rounded-xl" style="display: flex; align-items: center; gap: 0.5rem; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 0.625rem; border-radius: 0.75rem;">
+          <span class="text-emerald-400 text-sm shrink-0" style="color: #34d399;">✅</span>
+          <span class="font-bold text-[11px] tracking-tight" style="color: #d4d4d8; font-weight: 700; font-size: 11px;">Best Pricing</span>
+        </div>
+        <div class="flex items-center gap-2 p-2.5 bg-white/[0.03] border border-white/5 rounded-xl" style="display: flex; align-items: center; gap: 0.5rem; background-color: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); padding: 0.625rem; border-radius: 0.75rem;">
+          <span class="text-emerald-400 text-sm shrink-0" style="color: #34d399;">✅</span>
+          <span class="font-bold text-[11px] tracking-tight" style="color: #d4d4d8; font-weight: 700; font-size: 11px;">No Booking Req.</span>
+        </div>
+      </div>
+
+      <!-- Urgency Container -->
+      <div class="bg-gradient-to-r from-amber-500/5 to-[#D4AF37]/5 border border-[#D4AF37]/15 rounded-xl p-3.5 mt-3 text-center relative overflow-hidden" style="background: linear-gradient(to right, rgba(245, 158, 11, 0.05), rgba(212, 175, 87, 0.05)); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 0.75rem; padding: 0.875rem;">
+        <div class="text-[11px] sm:text-xs text-zinc-300 font-bold leading-normal" style="font-size: 11px; color: #d4d4d8; font-weight: 700;">
+          <span class="text-[#FFD700] font-black mr-1 uppercase font-mono tracking-wider" style="color: #FFD700; font-weight: 900;">⏳ Limited Availability</span>
+          Today's fare and promo rates may change based on vehicle demand. Check now before prices update.
+        </div>
+      </div>
+
+      <!-- Conversational Trust -->
+      <div class="text-center text-[10px] text-zinc-500 font-mono font-bold uppercase tracking-wider mt-4" style="font-size: 10px; color: #71717a; font-weight: 700; text-align: center;">
+        ⭐ Trusted By Travelers Across Gujarat
+      </div>
+
+      <!-- Pulse Interactive CTA -->
+      <div class="mt-4 relative group" style="margin-top: 1rem; position: relative;">
+        <button onclick="triggerWPFarePopupCTA()" class="relative w-full py-4 px-6 bg-gradient-to-r from-emerald-600 via-[#25D366] to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-black text-sm uppercase tracking-wider shadow-[0_10px_30px_rgba(37,211,102,0.4)] active:scale-[0.98] transition-all duration-300 rounded-2xl flex items-center justify-center gap-3" style="width: 100%; border: none; cursor: pointer; padding: 1rem 1.5rem; background: linear-gradient(to right, #059669, #25D366, #10b981); color: #FFF; font-weight: 900; border-radius: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
+          <span class="relative flex h-3 w-3 shrink-0" style="display: flex; height: 0.75rem; width: 0.75rem; position: relative;">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+          </span>
+          <span class="text-white text-base font-black tracking-widest drop-shadow-md" style="font-size: 1rem; font-weight: 900; letter-spacing: 0.05em;">🟢 CHECK MY FARE</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 shrink-0 fill-white/10" style="width: 1.25rem; height: 1.25rem;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        </button>
+      </div>
+
+      <!-- No thanks text dismissal link -->
+      <button onclick="closeWPFarePopup()" class="mt-3.5 mx-auto text-[10px] text-zinc-500 hover:text-zinc-300 font-mono hover:underline tracking-wider cursor-pointer" style="background: none; border: none; margin: 0.875rem auto 0 auto; display: block; font-size: 10px; color: #71717a; text-decoration: underline; cursor: pointer;">
+        No thanks, I'll pay full rate later
+      </button>
+
+    </div>
+  </div>
 
 </div>

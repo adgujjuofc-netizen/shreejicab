@@ -13,6 +13,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Loader from "./components/Loader";
+import FarePopup from "./components/FarePopup";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
@@ -106,6 +107,9 @@ export default function App() {
 
             {/* Sticky Pulsing green WhatsApp Floating badge */}
             <WhatsAppButton />
+
+            {/* Special Fare Urgency Lead Conversion Popup */}
+            <FarePopup />
           </motion.div>
         )}
       </AnimatePresence>
