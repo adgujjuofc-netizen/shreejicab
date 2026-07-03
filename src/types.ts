@@ -8,6 +8,7 @@ export interface Vehicle {
   luggage: number;
   features: string[];
   pricePerKm: number;
+  pricePerKmRound?: number;
   pricePerDay: number;
   approxAirportFare: number;
   bestFor: string;
@@ -38,6 +39,7 @@ export interface Testimonial {
   routeTaken: string;
   tag: "Family Trip" | "Airport Pickup" | "Corporate Travel" | "Gujarat Tourism";
   avatarColor: string;
+  tripPhoto?: string;
 }
 
 export interface Driver {

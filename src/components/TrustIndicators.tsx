@@ -6,23 +6,23 @@ export default function TrustIndicators() {
   const cards = [
     {
       icon: <ShieldCheck className="w-8 h-8 text-amber-500" />,
-      title: "100% Verified Drivers",
-      desc: "Our drivers undergo rigorous police vetting & personal checks. Trustworthy, respectful Hindi & Gujarati-speaking professionals."
+      title: "Your Family's Safety Comes First",
+      desc: "Our drivers are rigorously police-verified, strictly vetted, and personally trained. No over-speeding, no rough behavior—just complete respect, care, and safety for your parents and children."
     },
     {
       icon: <Tags className="w-8 h-8 text-amber-500" />,
-      title: "No Hidden Charges",
-      desc: "What we quote is what we charge. Enjoy complete upfront clarity on driver allowance, toll parameters & tax margins."
+      title: "Spotless Cab Every Time",
+      desc: "Pristine, freshly sanitized premium vehicles with refreshing fragrance and powerful dual blower climate control. We inspect each car before it departs for your pickup."
     },
     {
       icon: <HeartHandshake className="w-8 h-8 text-amber-500" />,
-      title: "Dedicated Family Safe",
-      desc: "Prone to luxury, secure child seating support, pristine clean cabins, and controlled speed keeping elderly guests strictly content."
+      title: "Real Humans Answer Within Minutes",
+      desc: "Skip automated robotic chatbots. Direct connection with the owners on WhatsApp or Call within 2 minutes. We track your flight, manage delay times, and guide you with real human empathy."
     },
     {
       icon: <Headphones className="w-8 h-8 text-amber-500" />,
-      title: "24x7 Airport Help desk",
-      desc: "Flight landed late at night? Forgot a piece of luggage? Our direct owners helpdesk stays online 24 hours a day to assist."
+      title: "No Hidden Charges, Ever",
+      desc: "What you see is exactly what you pay. Transparent pricing including driver allowance and up-front toll structures. No last-minute surprises or awkward arguments at your destination."
     }
   ];
 

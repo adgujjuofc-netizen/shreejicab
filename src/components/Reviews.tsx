@@ -60,6 +60,21 @@ export default function Reviews() {
                 <p className="text-sm sm:text-base text-zinc-300 italic leading-relaxed pt-2">
                   &ldquo;{rev.reviewText}&rdquo;
                 </p>
+
+                {rev.tripPhoto && (
+                  <div className="mt-4 rounded-xl overflow-hidden border border-white/10 h-44 relative group/photo">
+                    <img
+                      src={rev.tripPhoto}
+                      alt={`Trip taken by ${rev.name}`}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover group-hover/photo:scale-105 transition-transform duration-550"
+                    />
+                    <div className="absolute bottom-2 left-2 px-2 py-0.5 bg-black/75 backdrop-blur-sm rounded text-[9px] text-[#FFD700] font-mono tracking-wider uppercase border border-white/10 flex items-center gap-1">
+                      <span>📸</span>
+                      <span>Verified Trip Photo</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Author Profile card bottom alignment */}

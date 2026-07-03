@@ -16,7 +16,8 @@ export const VEHICLES: Vehicle[] = [
       "Real-time GPS Tracking",
       "Hindi & Gujarati Speaking Driver"
     ],
-    pricePerKm: 12,
+    pricePerKm: 15,
+    pricePerKmRound: 11,
     pricePerDay: 2800,
     approxAirportFare: 799,
     bestFor: "Solo travelers, business executives & couples",
@@ -37,7 +38,8 @@ export const VEHICLES: Vehicle[] = [
       "Mobile Charging Outlets",
       "Verified Safe & Respectful Driver"
     ],
-    pricePerKm: 15,
+    pricePerKm: 18,
+    pricePerKmRound: 13,
     pricePerDay: 3800,
     approxAirportFare: 1199,
     bestFor: "Family vacations, local weddings & budget outstations",
@@ -58,7 +60,8 @@ export const VEHICLES: Vehicle[] = [
       "USB Quick Charging Ports",
       "Top-Tier English/Hindi Elite Chauffeur"
     ],
-    pricePerKm: 18,
+    pricePerKm: 22,
+    pricePerKmRound: 18,
     pricePerDay: 4800,
     approxAirportFare: 1799,
     bestFor: "NRI airport luxury arrivals, long multi-day tours & executive commutes",
@@ -201,7 +204,8 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "14 May 2026",
     routeTaken: "Ahmedabad Airport Pickup to City",
     tag: "Airport Pickup",
-    avatarColor: "bg-amber-500"
+    avatarColor: "bg-amber-500",
+    tripPhoto: "https://images.unsplash.com/photo-1569003339405-ea396a5a8a90?auto=format&fit=crop&q=80&w=400"
   },
   {
     id: "tst-2",
@@ -212,7 +216,8 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "28 April 2026",
     routeTaken: "Ahmedabad → Statue Of Unity Round Trip",
     tag: "Gujarat Tourism",
-    avatarColor: "bg-emerald-500"
+    avatarColor: "bg-emerald-500",
+    tripPhoto: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=400"
   },
   {
     id: "tst-3",
@@ -223,7 +228,8 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "10 Feb 2026",
     routeTaken: "Ahmedabad Airport → Dwarka & Somnath Tour",
     tag: "Family Trip",
-    avatarColor: "bg-blue-500"
+    avatarColor: "bg-blue-500",
+    tripPhoto: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=400"
   },
   {
     id: "tst-4",
@@ -234,7 +240,8 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "02 Mar 2026",
     routeTaken: "Ahmedabad Airport to Rajkot Corporate",
     tag: "Corporate Travel",
-    avatarColor: "bg-purple-500"
+    avatarColor: "bg-purple-500",
+    tripPhoto: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=400"
   }
 ];
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import FareCalculator from "./components/FareCalculator";
 import TrustIndicators from "./components/TrustIndicators";
 import PainPoints from "./components/PainPoints";
 import Services from "./components/Services";
@@ -12,6 +13,7 @@ import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import StickyMobileBar from "./components/StickyMobileBar";
 import Loader from "./components/Loader";
 import FarePopup from "./components/FarePopup";
 import { motion, AnimatePresence } from "motion/react";
@@ -68,10 +70,31 @@ export default function App() {
             {/* Sticky Top Bar Navbar with Promo announcements */}
             <Navbar />
 
-            <main className="relative">
+            <main className="relative pb-16 md:pb-0">
               
               {/* Full-screen Hero + Lead Capture widget */}
               <Hero />
+
+              {/* Dynamic Lead Capture Calculator (friction removal) */}
+              <section id="booking-calculator" className="py-12 sm:py-16 bg-[#0a0b0d] relative overflow-hidden border-b border-zinc-900">
+                <div className="absolute top-0 right-1/4 w-72 h-72 bg-[#D4AF37]/5 rounded-full blur-[90px] pointer-events-none" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+                  <div className="text-center max-w-xl mx-auto mb-10">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-full mb-3">
+                      <span className="text-[9.5px] font-mono font-black tracking-widest text-[#FFD700] uppercase">
+                        💰 transparent pricing
+                      </span>
+                    </div>
+                    <h2 className="font-display font-black text-2xl sm:text-3xl text-white tracking-tight">
+                      Instantly Calculate Today&apos;s Fare
+                    </h2>
+                    <p className="mt-2 text-xs sm:text-sm text-zinc-400">
+                      No last-minute surprises, tolls and driver allowance factored in. Book via WhatsApp within 30 seconds.
+                    </p>
+                  </div>
+                  <FareCalculator />
+                </div>
+              </section>
 
               {/* Core Value badges row */}
               <TrustIndicators />
@@ -110,6 +133,9 @@ export default function App() {
 
             {/* Special Fare Urgency Lead Conversion Popup */}
             <FarePopup />
+
+            {/* Fixed Mobile Bottom Bar for instant calls/WhatsApp */}
+            <StickyMobileBar />
           </motion.div>
         )}
       </AnimatePresence>
